@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './page/Main';
 import Calc from './page/Calc';
 import Dark from './page/Dark';
+import StudentInfo from './page/StudentInfo';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path={"/"} element={<Main />} />
         <Route path={"/calc"} element={<Calc />} />
         <Route path={"/dark"} element={<Dark />} />
+        <Route path={"/studentinfo"} element={<StudentInfo />} />
       </Routes>
      </BrowserRouter>
     </>
