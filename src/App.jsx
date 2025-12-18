@@ -7,6 +7,7 @@ import Dark from './page/Dark';
 import StudentInfo from './page/StudentInfo';
 
 import Props건네주기 from './page/7일차_comp/자식건네주기';
+import 게시판 from './page/7일차_comp/게시판';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path={"/dark"} element={<Dark />} />
         <Route path={"/studentinfo"} element={<StudentInfo />} />
         <Route path={"/comp1"} element={<Props건네주기 />} />
+        <Route path={"/board"} element={<게시판 />} />
       </Routes>
      </BrowserRouter>
     </>
