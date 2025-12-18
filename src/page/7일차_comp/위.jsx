@@ -1,7 +1,7 @@
 import img1 from './image1.jfif';
 import img2 from './image2.png';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Study() {
 
@@ -43,9 +43,6 @@ export default function Study() {
 
 function 게시판(props) {
 
-    useEffect(() => {
-        console.log('변경확인');
-    }, [props.data.goodCnt]);
 
     return (
         <div style={{
