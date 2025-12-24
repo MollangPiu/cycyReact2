@@ -1,6 +1,9 @@
 import axios from 'axios';
+import { useState } from 'react';
 
 export default function Study() {
+
+    const [리스트, set리스트] = useState([]);
 
     function test1() {
         axios.get('http://localhost:8080/test1')
@@ -45,8 +48,32 @@ export default function Study() {
         });
     }
 
+    function boardList() {
+        axios.get('http://localhost:8080/api/board/list')
+        .then(res => {
+            if(res.status !== 200) {
+                console.log('error');
+            }
+            const list = res.data;
+            console.log(list);
+            set리스트(list);
+        });
+    }
+
     return (
         <div>
+            <h1>게시판 입력하기</h1>
+            <게시판만들기 />
+            <h1>게시판 불러오기</h1>
+            <input type="button" value="리스트 불러오기"
+            onClick={boardList} />
+            {리스트.map(item => (
+                <div key={item.boardIdx}>
+                    <span> {item.title} </span>
+                    <span> {item.userId} </span>
+                    <span> {item.createAt} </span>
+                </div>
+            ))}
             <h1>Axios 사용해보기</h1>
             <input type="button" value="res1"
             onClick={res1} />
@@ -60,6 +87,16 @@ export default function Study() {
             onClick={test3} />
             <input type="button" value="axios보내기4"
             onClick={test4} />
+
+  
+        </div>
+    )
+}
+
+function 게시판만들기() {
+    return (
+        <div>
+
         </div>
     )
 }
