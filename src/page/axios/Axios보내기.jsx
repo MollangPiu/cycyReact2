@@ -94,9 +94,27 @@ export default function Study() {
 }
 
 function 게시판만들기() {
+
+    function 게시판만들기() {
+        const title = document.getElementById('title');
+        const content = document.getElementById('content');
+        const  userId = document.getElementById('userId');
+
+        const obj = {title: title.value, content: content.value, userId: userId.value};
+        axios.post('http://localhost:8080/api/board/register', obj)
+        .then(res => {
+            //서버하고 통신이 제대로 되었는가 확인!!!
+            //여기서 확인은, status가 200번!인지 확인!
+            console.log(res);
+        })
+    }
+
     return (
         <div>
-
+            제목: <input type="text" id="title" /><br/>
+            작성자: <input type="text" id="userId" /><br/>
+            내용: <textarea style={{width: '300px', height: '200px'}} id="content" ></textarea>
+            <input type="button" value="게시글 등록" onClick={게시판만들기} />
         </div>
     )
 }
