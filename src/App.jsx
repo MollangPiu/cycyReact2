@@ -11,6 +11,10 @@ import 게시판 from './page/7일차_comp/게시판';
 import Axios1 from './page/axios/Axios보내기';
 
 
+import 로그인 from './page/Login';
+import 회원가입 from './page/Register';
+
+
 function App() {
   return (
     <>
@@ -23,6 +27,9 @@ function App() {
         <Route path={"/comp1"} element={<Props건네주기 />} />
         <Route path={"/board"} element={<게시판 />} />
         <Route path={"/axios1"} element={<Axios1 />} />
+
+        <Route path={'/login'} element={<로그인 />} />
+        <Route path={'/register'} element={<회원가입 />} />
       </Routes>
      </BrowserRouter>
     </>

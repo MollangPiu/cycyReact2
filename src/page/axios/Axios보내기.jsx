@@ -60,10 +60,15 @@ export default function Study() {
         });
     }
 
+    function 자식이부모부르는함수() {
+        boardList();
+    }
+
     return (
         <div>
             <h1>게시판 입력하기</h1>
-            <게시판만들기 />
+            <게시판만들기 eventHelp={자식이부모부르는함수}/>
+
             <h1>게시판 불러오기</h1>
             <input type="button" value="리스트 불러오기"
             onClick={boardList} />
@@ -93,7 +98,7 @@ export default function Study() {
     )
 }
 
-function 게시판만들기() {
+function 게시판만들기(props) {
 
     function 게시판만들기() {
         const title = document.getElementById('title');
@@ -106,6 +111,8 @@ function 게시판만들기() {
             //서버하고 통신이 제대로 되었는가 확인!!!
             //여기서 확인은, status가 200번!인지 확인!
             console.log(res);
+
+            props.eventHelp();
         })
     }
 
