@@ -33,7 +33,7 @@ export default function Login() {
 
     function 쿠키확인() {
         const token = getCookie('token');
-        console.log('토큰확인: ', token);
+        console.log('토큰확인a: ', token);
     }
 
     function getCookie(name) {
@@ -51,6 +51,37 @@ export default function Login() {
             <input type="button" value="로그인" onClick={로그인}/>
 
             <input type="button" value="쿠키 확인" onClick={쿠키확인} />
+            <다른페이지 />
+        </div>
+    )
+}
+
+function 다른페이지() {
+
+    function getCookie(name) {
+        const value = document.cookie
+        .split('; ')
+        .find(row => row.startsWith(name + '='));
+        return value ? value.split('=')[1] : null;
+    }
+
+    function api호출() {
+        const token = getCookie('token'); //apple_[user명]
+        //main Controller를 호출
+        axios.get('http://localhost:8080/api/main/test',{
+            headers: {
+                'Authorization': 'Bearer '+token
+            }
+        }
+        )
+        .then(res => {
+            console.log(res);
+        });
+    }
+    return (
+        <div style={{width: '100vw', height: '300px', border: '3px solid red'}}>
+            <h1>다른 페이지</h1>
+            <input type="button" value="로그인 후 실행 버튼"  onClick={api호출}/>
         </div>
     )
 }
