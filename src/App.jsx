@@ -14,6 +14,10 @@ import Axios1 from './page/axios/Axios보내기';
 import 로그인 from './page/Login';
 import 회원가입 from './page/Register';
 
+import 게시판2 from './page/axios2/게시판';
+
+import 광고 from './page/광고';
+
 
 function App() {
   return (
@@ -30,6 +34,10 @@ function App() {
 
         <Route path={'/login'} element={<로그인 />} />
         <Route path={'/register'} element={<회원가입 />} />
+        
+        <Route path={'/board2'} element={<게시판2 />} />
+
+        <Route path={'/wow'} element={<광고 />} />
       </Routes>
      </BrowserRouter>
     </>
