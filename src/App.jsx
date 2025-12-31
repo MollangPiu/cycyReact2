@@ -20,6 +20,7 @@ import 광고 from './page/광고';
 import Ref1 from './page/Ref';
 
 import 리듀서 from './page/리듀서';
+import 리덕스1 from './page/redux1/index';
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
         <Route path={'/wow'} element={<광고 />} />
         <Route path={"/ref1"} element={<Ref1 />}  />
         <Route path={"/reduce"} element={<리듀서 />} />
+        
+        <Route path={"/redux1"} element={<리덕스1 />} />
+        
       </Routes>
      </BrowserRouter>
     </>
