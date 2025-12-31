@@ -17,6 +17,9 @@ import 회원가입 from './page/Register';
 import 게시판2 from './page/axios2/게시판';
 
 import 광고 from './page/광고';
+import Ref1 from './page/Ref';
+
+import 리듀서 from './page/리듀서';
 
 
 function App() {
@@ -38,6 +41,8 @@ function App() {
         <Route path={'/board2'} element={<게시판2 />} />
 
         <Route path={'/wow'} element={<광고 />} />
+        <Route path={"/ref1"} element={<Ref1 />}  />
+        <Route path={"/reduce"} element={<리듀서 />} />
       </Routes>
      </BrowserRouter>
     </>
